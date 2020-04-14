@@ -4,6 +4,9 @@ import QuestionContainer from './QuestionContainer';
 import API from '../API';
 
 
+
+
+
 class Page extends Component {
     state = {
         questions: [],
@@ -78,7 +81,7 @@ class Page extends Component {
 
         // console.log(language)
         return (
-            <div>
+            <div styles={{ backgroundImage:`url(./images/background.png)`, color:'red' }}>
                 <NavBar />
                 <div>
                     <label>Select Category</label>

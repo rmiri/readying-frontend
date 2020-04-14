@@ -2,10 +2,9 @@ import React from 'react'
 
 const NavBar = () => {
     return (
-        <div>
-            <a href='/'><img src='logo.png'></img></a>
-            <h1>nav Bar</h1>
-        </div>
+        <nav className="flex items-center p-4 shadow">
+            <a href='/'><img src='images/logo.png' alt="logo" className="h-10"></img></a>
+        </nav>
     )
 }
 

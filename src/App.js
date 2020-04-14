@@ -4,7 +4,7 @@ import Page from './containers/Page';
 function App() {
  
   return (
-    <div className="App">
+    <div className="bg-fixed" >
       <Page />
     </div>
   );
