@@ -37,7 +37,7 @@ class QuestionContainer extends Component {
     }
     
     render() {
-        console.log(this.props)
+        console.log(this.props.questions)
         return (
             <div>
                 <h1>Question Container</h1>

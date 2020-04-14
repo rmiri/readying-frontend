@@ -32,37 +32,42 @@ class Page extends Component {
     //Filter 
 
     filterCategory = (e) => {
-        var quesitonFiltered = this.setQuestionsByFilter(e.target.value)
-        console.log(quesitonFiltered)
         this.setState({
             [e.target.name]: e.target.value,
-            filteredQuestions: quesitonFiltered
         })
-        if (e.target.value === 'trivia' || e.target.value === 'coding'){
+        if (e.target.value === 'cultural'){
+            let quesitonFiltered = this.setQuestionsByFilter(e.target.value)
+            this.setState({
+                // [e.target.name]: e.target.value,
+                filteredQuestions: quesitonFiltered
+            })
+
+        } else if (e.target.value === 'trivia' || e.target.value === 'coding'){
+            let quesitonFiltered = this.setQuestionsByFilter(e.target.value)
             this.setState({
                 isLanguageVisible: true,
+                filteredQuestions: quesitonFiltered
+            })
+        } else {
+            let quesitonFiltered = this.setQuestionsByCateg(this.state.category,e.target.value)
+            this.setState({
+                filteredQuestions: quesitonFiltered
             })
         }
-        if (e.target.name === 'language'){
-            // let what = quesitonFiltered//.filter( q => q.language === e.target.value)
-            // this.setState({
-            //     filteredQuestions: quesitonFiltered
-            // })
-            // console.log(what)
-            // console.log(quesitonFiltered.filter(q => q.language === 'javascript'))
-            
-        }
-       
     }
 
     //filter questions by category
 
-    setQuestionsByFilter = filter => {
+    setQuestionsByFilter = (filter) => {
         return [...this.state.questions].filter( q => q.category === filter);
+    }
+    setQuestionsByCateg = (categ,language) => {
+        let questions = [...this.state.questions].filter( q => q.category === categ)
+        return questions.filter( q => q.language === language);
     }
 
     render() {
-        
+        // console.log(this.state)
         const {
             questions,
             category,
