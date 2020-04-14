@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
-import NavBar from '../components/NavBar'
+
 import QuestionContainer from './QuestionContainer';
 import API from '../API';
 
-
+import background from '../images/background.png'
 
 
 
@@ -81,8 +81,8 @@ class Page extends Component {
 
         // console.log(language)
         return (
-            <div styles={{ backgroundImage:`url(./images/background.png)`, color:'red' }}>
-                <NavBar />
+            <div className="h-screen" style={{ backgroundImage:`url(${background})` }}>
+                
                 <div>
                     <label>Select Category</label>
                     <select
