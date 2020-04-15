@@ -8,18 +8,12 @@ class QuestionContainer extends Component {
         showAnswer: false
     }
     getQuestion = () => {
-        if (this.state.question){
-            return <Question question={this.state.question.content} info={this.state.question.info} key={"question"} />
-        }else {
-            return <h1>Click to start</h1>
-        }
+       
+        return <Question question={this.state.question.content} info={this.state.question.info} key={"question"} />
+     
     }
     answer = () => {
-        if (this.state.question){
-            return <Answer answer={this.state.question.answer} key={"answer"} />
-        }else {
-            return <h1>Click to start</h1>
-        }
+        return <Answer answer={this.state.question.answer} key={"answer"} />
     }
 
 
@@ -41,16 +35,16 @@ class QuestionContainer extends Component {
         return (
             <div className="w-full h-full">
              
-                <div className="bg-white w-full h-40 rounded-lg shadow-md"> 
+                <div className=""> 
                     {this.getQuestion()}
                 </div>
                     <button 
                         onClick={this.randomQuestion}
-                        className="mt-5 btn bg-white text-gray-600 font-sans py-2 px-16 rounded border border-b-4 border-gray-500 hover:border-t-2 hover:border-gray-600 hover:bg-gray-200"
+                        className="focus:outline-none mt-5 btn bg-white text-gray-600 font-sans py-2 px-16 rounded border hover:bg-gray-200"
                     >Question</button>
                     <button 
                         onClick={this.showAnswer}
-                        className="mt-5 btn text-white font-sans py-2 px-12 ml-32 rounded  border border-gray-200 hoover:border-gray-400 hover:text-gray-200 hover:shadow"
+                        className="focus:outline-none mt-5 btn text-white font-sans py-2 px-12 ml-32 rounded  border border-gray-200 hoover:border-gray-400 hover:text-gray-200 hover:shadow"
                     >Show answer</button>
                 <div className="h-10">
                     {this.state.showAnswer && this.answer()}
