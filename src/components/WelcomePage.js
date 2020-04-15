@@ -4,7 +4,7 @@ import { Link } from "react-router-dom"
 
 const WelcomePage = () => {
     return (
-        <div className="h-screen grid grid-cols-2 grid-rows-2" style={{ backgroundImage:`url(${background})` }}>
+        <div className="h-screen grid grid-cols-2 grid-rows-2 bg-fixed" style={{ backgroundImage:`url(${background})` }}>
             <img src="images/welcome.png" className="max-w-xl row-span-3 pl-32 pt-5" alt="two people, one interviewing the other"></img>
             {/*"max-w-full max-h-full sm:w-100 md:w-100 w-1/3   ml-20 mt-5}"*/}
             <div className=" row-start-2 row-span-2 col-end-3 pl-24 pt-0">

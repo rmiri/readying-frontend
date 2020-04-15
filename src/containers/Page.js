@@ -81,7 +81,7 @@ class Page extends Component {
 
         // console.log(language)
         return (
-            <div className="h-screen flex" style={{ backgroundImage:`url(${background})` }}>
+            <div className="h-screen flex bg-fixed" style={{ backgroundImage:`url(${background})` }}>
                 <div className="w-1/2 pt-20 pl-16">
                     <img src='images/girl.png' className=""/>
                     <div className="flex">
