@@ -1,3 +1,5 @@
+/* For my custom style look for Renata on this file */
+
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 
 /* Document
@@ -52143,3 +52145,10 @@ video {
     transition-duration: 1000ms;
   }
 }
+
+
+/* Renata's custom styel */
+.readyingH1 {
+    font-family: 'Baloo Paaji 2', cursive;
+}
+

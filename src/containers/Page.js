@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 import QuestionContainer from './QuestionContainer';
 import API from '../API';
 
-import background from '../images/background.png'
+import background from '../images/back-quesitons.png'
 
 
 
@@ -81,37 +81,43 @@ class Page extends Component {
 
         // console.log(language)
         return (
-            <div className="h-screen" style={{ backgroundImage:`url(${background})` }}>
-                
-                <div>
-                    <label>Select Category</label>
-                    <select
-                        name='category'
-                        onChange={this.filterCategory}
-                    >
-                        <option value='null' disabled selected>Category</option>
-                        <option value='cultural'>Cultural</option>
-                        <option value='trivia'>Trivia</option>
-                        <option value='coding'>Coding</option>
-                    </select>
+            <div className="h-screen flex" style={{ backgroundImage:`url(${background})` }}>
+                <div className="w-1/2 pt-20 pl-16">
+                    <img src='images/girl.png' className=""/>
+                    <div className="flex">
+                     <div className="pt-10 w-1/3">
+                        <select
+                            name='category'
+                            onChange={this.filterCategory}
+                            className="w-full h-10 bg-white border-solid border-2 border-gray-400 focus:outline-none focus:shadow-md"
+                        >
+                            <option value='null' disabled selected> Select Category</option>
+                            <option value='cultural'>Cultural</option>
+                            <option value='trivia'>Trivia</option>
+                            <option value='coding'>Coding</option>
+                        </select>
+                    </div>
+                    {isLanguageVisible && category !== 'cultural' ?                 
+                    <div className="pt-10 ml-10 w-1/3">
+                        <select
+                            name='language'
+                            onChange={this.filterCategory}
+                            className="w-full h-10 bg-white border-solid border-2 border-gray-400 focus:outline-none focus:shadow-md"
+                        >
+                            <option value='null' disabled selected>Select Language</option>
+                            <option value='javascript'>Java Script</option>
+                            <option value='ruby'>Ruby</option>
+                            <option value='react'>React</option>
+                        </select>
+                    </div> 
+                    :
+                    null
+                    }
                 </div>
-                {isLanguageVisible && category !== 'cultural' ?                 <div>
-                    <label>Select Language</label>
-                    <select
-                        name='language'
-                        onChange={this.filterCategory}
-                    >
-                        <option value='null' disabled selected>Language</option>
-                        <option value='javascript'>Java Script</option>
-                        <option value='ruby'>Ruby</option>
-                        <option value='react'>React</option>
-                    </select>
-                </div> 
-                :
-                null
-                }
-
+                 </div>
+                <div className="w-1/2 pt-12 pr-32 pb-24">
                 <QuestionContainer questions={filteredQuestions ? filteredQuestions : questions}/>
+                </div>
             </div>
         )
     }
