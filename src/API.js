@@ -1,4 +1,4 @@
-const url = 'http://localhost:3000';
+const url = 'https://readying.herokuapp.com';
 const questionsUrl = url + '/questions';
 
 const get = (url) => (
